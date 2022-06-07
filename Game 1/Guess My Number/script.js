@@ -6,6 +6,7 @@ let secretNumber = Math.trunc(Math.random() * 20) + 1;
 let score = 20;
 let highScore = 0;
 
+
 document.querySelector('.check').addEventListener('click', function () {
     const guess = Number(document.querySelector('.guess').value);
     //console.log(guess, typeof guess);
@@ -28,6 +29,7 @@ document.querySelector('.check').addEventListener('click', function () {
         }
 
         // Refactoring Our Code
+        // When guess is wrong
     } else if (guess !== secretNumber) {
         if (score > 0) {
             document.querySelector('p.message').textContent = guess > secretNumber ? "⬆️ Your Guess is High!" : '⬇️ Your Guess is Low!';
@@ -37,27 +39,6 @@ document.querySelector('.check').addEventListener('click', function () {
             document.querySelector('p.message').textContent = "😕 You lost the Game!";
         }
     }
-
-    // // When guess is to high
-    // else if (guess > secretNumber) {
-    //     if (score > 0) {
-    //         document.querySelector('p.message').textContent = "⬆️ Your Guess is High!";
-    //         score--;
-    //         document.querySelector('span.score').textContent = score;
-    //     } else {
-    //         document.querySelector('p.message').textContent = "😕 You lost the Game!";
-    //     }
-
-    //     // When guess is low
-    // } else if (guess < secretNumber) {
-    //     if (score > 0) {
-    //         document.querySelector('p.message').textContent = "⬇️ Your Guess is Low!";
-    //         score--;
-    //         document.querySelector('span.score').textContent = score;
-    //     } else {
-    //         document.querySelector('p.message').textContent = "😕 You lost the Game!";
-    //     }
-    // }
 });
 
 
