@@ -27,26 +27,37 @@ document.querySelector('.check').addEventListener('click', function () {
             document.querySelector('.highscore').textContent = highScore;
         }
 
-        // When guess is to high
-    } else if (guess > secretNumber) {
+        // Refactoring Our Code
+    } else if (guess !== secretNumber) {
         if (score > 0) {
-            document.querySelector('p.message').textContent = "⬆️ Your Guess is High!";
-            score--;
-            document.querySelector('span.score').textContent = score;
-        } else {
-            document.querySelector('p.message').textContent = "😕 You lost the Game!";
-        }
-
-        // When guess is low
-    } else if (guess < secretNumber) {
-        if (score > 0) {
-            document.querySelector('p.message').textContent = "⬇️ Your Guess is Low!";
+            document.querySelector('p.message').textContent = guess > secretNumber ? "⬆️ Your Guess is High!" : '⬇️ Your Guess is Low!';
             score--;
             document.querySelector('span.score').textContent = score;
         } else {
             document.querySelector('p.message').textContent = "😕 You lost the Game!";
         }
     }
+
+    // // When guess is to high
+    // else if (guess > secretNumber) {
+    //     if (score > 0) {
+    //         document.querySelector('p.message').textContent = "⬆️ Your Guess is High!";
+    //         score--;
+    //         document.querySelector('span.score').textContent = score;
+    //     } else {
+    //         document.querySelector('p.message').textContent = "😕 You lost the Game!";
+    //     }
+
+    //     // When guess is low
+    // } else if (guess < secretNumber) {
+    //     if (score > 0) {
+    //         document.querySelector('p.message').textContent = "⬇️ Your Guess is Low!";
+    //         score--;
+    //         document.querySelector('span.score').textContent = score;
+    //     } else {
+    //         document.querySelector('p.message').textContent = "😕 You lost the Game!";
+    //     }
+    // }
 });
 
 
